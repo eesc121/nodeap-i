@@ -2,8 +2,10 @@ services:
   - type: web
     name: willhaben-scraper
     env: node
-    buildCommand: npm install
-    startCommand: npm start
+    buildCommand: |
+      npm install
+      npx playwright install --with-deps
+    startCommand: node index.js
     plan: free
     envVars: {}
     buildFilter:
